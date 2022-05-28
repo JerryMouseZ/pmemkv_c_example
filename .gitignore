@@ -1,0 +1,4 @@
+*.lst
+pmemkv
+*.out
+core
