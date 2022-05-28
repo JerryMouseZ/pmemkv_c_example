@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <libpmemkv.h>
 #include <string.h>
-const char PATH[] = "/mnt/pmem/kvfile";
+const char PATH[] = "kvfile";
 const uint64_t SIZE = 0x1000000;
 
 int get_kv_callback(const char *k, size_t kb, const char *value, size_t value_bytes, void *arg)
@@ -35,7 +35,7 @@ int main()
         exit(1);
     }
 
-    if (pmemkv_put(db, "key3", strlen("key3") + 1, "value2", strlen("value3")) != PMEMKV_STATUS_OK) {
+    if (pmemkv_put(db, "key3", strlen("key3") + 1, "value3", strlen("value3")) != PMEMKV_STATUS_OK) {
         fprintf(stderr, "%s\n", pmemkv_errormsg());
         exit(1);
     }
